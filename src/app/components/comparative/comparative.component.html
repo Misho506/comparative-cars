@@ -1,0 +1,22 @@
+<div class="d-flex flex-column">
+  <h3 class="mx-auto mt-2 mb-5"> Comparativa de vehículos seleccionados</h3>
+  <table class="table w-75 mx-auto my-5">
+    <thead>
+      <tr>
+        <th>Modelo</th>
+        <th>Año</th>
+        <th>Marca</th>
+        <th>Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let car of cars">
+        <td>{{car.model}}</td>
+        <td>{{car.year}}</td>
+        <td>{{car.brand}}</td>
+        <td>${{car.price}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="goBack()" class="btn btn-primary w-75 mx-auto">Volver</button>
+</div>
