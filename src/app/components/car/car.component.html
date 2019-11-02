@@ -1,0 +1,8 @@
+  <div class="d-flex flex-column">
+    <h2 class="m-auto pt-2">{{car.brand}}</h2>
+    <img src="../../../assets/images/{{car.img}}" class="car-img d-flex m-auto" alt="Car-Image">
+    <h1 class="m-auto">{{car.model}}</h1>
+    <span class="m-auto w-50 py-3">{{car.details}}</span>
+    <h5 class="m-auto">Price: ${{car.price}}</h5>
+    <button (click)="goBack()" class="btn btn-primary mx-auto mt-5 mb-2 w-75">Volver </button>
+  </div>
