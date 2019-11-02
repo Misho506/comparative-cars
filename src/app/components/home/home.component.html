@@ -1,0 +1,27 @@
+<div class="p-2 home-page">
+  <h2 class="d-flex justify-content-center pt-5">Busca tu vehículo por tu marca favorita</h2>
+  <div class="d-flex justify-content-center align-baseline mt-4">
+    <div class="mb-4">
+      <input type="text" class="w-100" placeholder="Marca de auto..." (keyup)="searchCar($event.target.value)">
+      <span class="d-flex justify-content-center font-italic" style="font-size: small;">Para compara vehículos, primero debes seleccionar al menos 2 vehículos.</span>
+    </div>
+    <div>
+      <button class="bg-info border-0 py-1 px-2 text-white"><i class="fa fa-search text-black"></i></button>
+      <button (click)="compareCars()" class="bg-info border-0 py-1 px-2 text-white ml-2">Compara vehículos</button>
+    </div>
+  </div>
+  <div class="row m-0 d-flex justify-content-center">
+    <div *ngFor="let car of carList" class="card col-sm-5 col-11 col-lg-3 m-2 car-card" >
+      <img src="../../../assets/images/{{car.img}}" class="card-img-top car-image d-flex align-self-center" alt="Car-Image">
+      <div class="card-body">
+        <h5 class="card-title text-uppercase">{{car.model}}</h5>
+        <p class="card-text mb-1 text-uppercase">{{car.brand}}</p>
+        <div class="d-flex align-items-center mb-1">
+          <span>Compara vehículo</span>
+          <input type="checkbox" class="ml-2" selected="checkCar(car)" (change)="selectCar(car)">
+        </div>
+        <button (click)="goToDetailCar(car)" class="btn btn-primary">Más detalles</button>
+      </div>
+    </div>
+  </div>
+</div>
